@@ -106,6 +106,7 @@ app.include_router(audit_router,    prefix=base_path)
 
 os.makedirs("feedback_dataset/video_frames", exist_ok=True)
 app.mount(f"{base_path}/frames", StaticFiles(directory="feedback_dataset/video_frames"), name="frames")
+app.mount(f"{base_path}/dashboard", StaticFiles(directory="static/dashboard", html=True), name="dashboard")
 
 @app.get("/", include_in_schema=False)
 async def root():
@@ -117,6 +118,7 @@ async def root():
         "base_path": base_path,
         "docs": f"{base_path}/docs",
         "healthz": f"{base_path}/healthz",
+        "dashboard": f"{base_path}/dashboard/",
         "hint": "The web UI is served by the frontend service; this port exposes the detector API only.",
     }
 

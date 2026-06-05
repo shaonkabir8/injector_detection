@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "plugins": {
+    "caveman@caveman": [
+      {
+        "scope": "project",
+        "installPath": "/home/john/.claude/plugins/cache/caveman/caveman/local",
+        "version": "local",
+        "installedAt": "2026-04-14T00:00:00.000Z",
+        "lastUpdated": "2026-04-14T00:00:00.000Z",
+        "gitCommitSha": ""
+      }
+    ]
+  }
+}

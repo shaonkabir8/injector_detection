@@ -1,0 +1,20 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+ultralytics==8.2.18
+opencv-python-headless==4.9.0.80
+easyocr==1.7.1
+numpy==1.26.4
+Pillow==10.3.0
+requests==2.31.0
+python-dotenv==1.0.1
+pydantic==2.7.1
+pydantic-settings==2.2.1
+# PyTorch CPU — pin to 2.5.x for compatibility with ultralytics 8.2.x
+torch==2.5.1
+torchvision==0.20.1
+# Redis cache + job queue
+fakeredis==2.23.2
+redis==5.0.8
+yt-dlp==2024.4.9
+psutil==5.9.8

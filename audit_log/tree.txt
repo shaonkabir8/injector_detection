@@ -1,0 +1,1256 @@
+injector_detection
+├── .sixth
+│   └── skills
+├── Dockerfile
+├── README.md
+├── audit.sh
+├── config.py
+├── feedback_dataset
+│   ├── feedback.jsonl
+│   ├── images
+│   │   ├── 2026-05-02
+│   │   │   ├── 553288dac129440ef3da1a8cc9d75dc1.jpg
+│   │   │   └── dd5341fd44ff61f36d86caba6698e510.jpg
+│   │   ├── 2026-05-09
+│   │   │   ├── 07dda3492d7cbb7b113d77c214be8143.jpg
+│   │   │   ├── 287feb6077e0e80732ffcf66f25224e3.jpg
+│   │   │   └── 9d6914d68d0bc7e28389a761b7227dbb.jpg
+│   │   ├── 2026-05-10
+│   │   │   ├── 07dda3492d7cbb7b113d77c214be8143.jpg
+│   │   │   └── d8f165e95d3c1a06878dd611f72928a9.jpg
+│   │   └── 2026-06-04
+│   │       ├── 07dda3492d7cbb7b113d77c214be8143.jpg
+│   │       └── 9d6914d68d0bc7e28389a761b7227dbb.jpg
+│   └── video_frames
+│       ├── 2026-05-02
+│       │   └── file_e591c967
+│       │       ├── frame_000000.jpg
+│       │       ├── frame_000015.jpg
+│       │       ├── frame_000030.jpg
+│       │       ├── frame_000045.jpg
+│       │       ├── frame_000060.jpg
+│       │       ├── frame_000075.jpg
+│       │       ├── frame_000090.jpg
+│       │       ├── frame_000105.jpg
+│       │       ├── frame_000120.jpg
+│       │       ├── frame_000135.jpg
+│       │       ├── frame_000150.jpg
+│       │       ├── frame_000165.jpg
+│       │       ├── frame_000180.jpg
+│       │       ├── frame_000195.jpg
+│       │       ├── frame_000210.jpg
+│       │       ├── frame_000225.jpg
+│       │       ├── frame_000240.jpg
+│       │       ├── frame_000255.jpg
+│       │       ├── frame_000270.jpg
+│       │       ├── frame_000285.jpg
+│       │       ├── frame_000300.jpg
+│       │       ├── frame_000315.jpg
+│       │       ├── frame_000330.jpg
+│       │       ├── frame_000345.jpg
+│       │       ├── frame_000360.jpg
+│       │       ├── frame_000375.jpg
+│       │       ├── frame_000390.jpg
+│       │       ├── frame_000480.jpg
+│       │       ├── frame_000540.jpg
+│       │       ├── frame_000555.jpg
+│       │       ├── frame_000570.jpg
+│       │       ├── frame_000585.jpg
+│       │       ├── frame_000630.jpg
+│       │       ├── frame_000645.jpg
+│       │       ├── frame_000660.jpg
+│       │       ├── labels.jsonl
+│       │       └── session.json
+│       ├── 2026-05-09
+│       │   ├── file_102360c7
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_a6b23005
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   └── file_d5c9a6ab
+│       │       ├── frame_000000.jpg
+│       │       ├── frame_000015.jpg
+│       │       ├── frame_000030.jpg
+│       │       ├── frame_000045.jpg
+│       │       ├── frame_000060.jpg
+│       │       ├── frame_000075.jpg
+│       │       ├── frame_000090.jpg
+│       │       ├── frame_000105.jpg
+│       │       ├── frame_000120.jpg
+│       │       ├── frame_000135.jpg
+│       │       ├── frame_000150.jpg
+│       │       ├── frame_000165.jpg
+│       │       ├── frame_000180.jpg
+│       │       ├── frame_000195.jpg
+│       │       ├── frame_000210.jpg
+│       │       ├── frame_000225.jpg
+│       │       ├── frame_000240.jpg
+│       │       ├── frame_000255.jpg
+│       │       ├── frame_000270.jpg
+│       │       ├── frame_000285.jpg
+│       │       ├── frame_000300.jpg
+│       │       ├── frame_000315.jpg
+│       │       ├── frame_000330.jpg
+│       │       ├── frame_000345.jpg
+│       │       ├── frame_000360.jpg
+│       │       ├── frame_000375.jpg
+│       │       ├── frame_000390.jpg
+│       │       ├── frame_000480.jpg
+│       │       ├── frame_000540.jpg
+│       │       ├── frame_000555.jpg
+│       │       ├── frame_000570.jpg
+│       │       ├── frame_000585.jpg
+│       │       ├── frame_000630.jpg
+│       │       ├── frame_000645.jpg
+│       │       ├── frame_000660.jpg
+│       │       ├── frame_000675.jpg
+│       │       ├── frame_000705.jpg
+│       │       ├── labels.jsonl
+│       │       └── session.json
+│       ├── 2026-05-10
+│       │   ├── file_0f548a64
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_0fd34b77
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_10737845
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_13d8d766
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_362173da
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_432ef43a
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000525.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   └── labels.jsonl
+│       │   ├── file_46818675
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_55d19291
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_5ce6d8af
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_61eed044
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_73409a2a
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_7eacb4b1
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_807244d9
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_83f396a7
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_8b3530d1
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_90ebf8e9
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_a0d1b2c6
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_a3e5525d
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_c45d0265
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_001035.jpg
+│       │   │   ├── frame_001110.jpg
+│       │   │   ├── frame_001155.jpg
+│       │   │   ├── frame_001260.jpg
+│       │   │   ├── frame_001275.jpg
+│       │   │   ├── frame_001290.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_c682722c
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_c9e8c5dc
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_ca30cd80
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_d0c7961f
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_da6746f2
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_e0d5011c
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   ├── file_e8c7e57a
+│       │   │   ├── frame_000000.jpg
+│       │   │   ├── frame_000015.jpg
+│       │   │   ├── frame_000030.jpg
+│       │   │   ├── frame_000045.jpg
+│       │   │   ├── frame_000060.jpg
+│       │   │   ├── frame_000075.jpg
+│       │   │   ├── frame_000090.jpg
+│       │   │   ├── frame_000105.jpg
+│       │   │   ├── frame_000120.jpg
+│       │   │   ├── frame_000135.jpg
+│       │   │   ├── frame_000150.jpg
+│       │   │   ├── frame_000165.jpg
+│       │   │   ├── frame_000180.jpg
+│       │   │   ├── frame_000195.jpg
+│       │   │   ├── frame_000210.jpg
+│       │   │   ├── frame_000225.jpg
+│       │   │   ├── frame_000240.jpg
+│       │   │   ├── frame_000255.jpg
+│       │   │   ├── frame_000270.jpg
+│       │   │   ├── frame_000285.jpg
+│       │   │   ├── frame_000300.jpg
+│       │   │   ├── frame_000315.jpg
+│       │   │   ├── frame_000330.jpg
+│       │   │   ├── frame_000345.jpg
+│       │   │   ├── frame_000360.jpg
+│       │   │   ├── frame_000375.jpg
+│       │   │   ├── frame_000390.jpg
+│       │   │   ├── frame_000480.jpg
+│       │   │   ├── frame_000540.jpg
+│       │   │   ├── frame_000555.jpg
+│       │   │   ├── frame_000570.jpg
+│       │   │   ├── frame_000585.jpg
+│       │   │   ├── frame_000630.jpg
+│       │   │   ├── frame_000645.jpg
+│       │   │   ├── frame_000660.jpg
+│       │   │   ├── frame_000675.jpg
+│       │   │   ├── frame_000705.jpg
+│       │   │   ├── labels.jsonl
+│       │   │   └── session.json
+│       │   └── file_f655611a
+│       │       ├── frame_000000.jpg
+│       │       ├── frame_000015.jpg
+│       │       ├── frame_000030.jpg
+│       │       ├── frame_000045.jpg
+│       │       ├── frame_000060.jpg
+│       │       ├── frame_000075.jpg
+│       │       ├── frame_000090.jpg
+│       │       ├── frame_000105.jpg
+│       │       ├── frame_000120.jpg
+│       │       ├── frame_000135.jpg
+│       │       ├── frame_000150.jpg
+│       │       ├── frame_000165.jpg
+│       │       ├── frame_000180.jpg
+│       │       ├── frame_000195.jpg
+│       │       ├── frame_000210.jpg
+│       │       ├── frame_000225.jpg
+│       │       ├── frame_000240.jpg
+│       │       ├── frame_000255.jpg
+│       │       ├── frame_000270.jpg
+│       │       ├── frame_000285.jpg
+│       │       ├── frame_000300.jpg
+│       │       ├── frame_000315.jpg
+│       │       ├── frame_000330.jpg
+│       │       ├── frame_000345.jpg
+│       │       ├── frame_000360.jpg
+│       │       ├── frame_000375.jpg
+│       │       ├── frame_000390.jpg
+│       │       ├── frame_000480.jpg
+│       │       ├── frame_000540.jpg
+│       │       ├── frame_000555.jpg
+│       │       ├── frame_000570.jpg
+│       │       ├── frame_000585.jpg
+│       │       ├── frame_000630.jpg
+│       │       ├── frame_000645.jpg
+│       │       ├── frame_000660.jpg
+│       │       ├── frame_000675.jpg
+│       │       ├── frame_000705.jpg
+│       │       ├── labels.jsonl
+│       │       └── session.json
+│       └── 2026-05-11
+│           └── file_6d33641c
+│               ├── labels.jsonl
+│               └── session.json
+├── main.py
+├── models
+├── modules
+│   ├── __init__.py
+│   ├── audit_system.py
+│   ├── cache.py
+│   ├── cargo_segmenter.py
+│   ├── confidence_gate.py
+│   ├── event_emitter.py
+│   ├── feedback.py
+│   ├── job_queue.py
+│   ├── load_detector.py
+│   ├── materials_detector.py
+│   ├── motion_detector.py
+│   ├── plate_detector.py
+│   ├── quality_checker.py
+│   ├── source_resolver.py
+│   ├── subtype_classifier.py
+│   ├── url_safety.py
+│   ├── vehicle_detector.py
+│   ├── vehicle_validator.py
+│   ├── video_processor.py
+│   └── youtube_resolver.py
+├── pydantic_settings
+│   └── __init__.py
+├── repo_files.txt
+├── repo_tree.txt
+├── requirements.txt
+├── routers
+│   ├── __init__.py
+│   ├── audit.py
+│   ├── detect.py
+│   ├── feedback.py
+│   ├── health.py
+│   ├── queue.py
+│   └── video.py
+├── schemas
+│   ├── __init__.py
+│   └── detection.py
+├── start.sh
+├── test_motion.py
+├── utils
+│   ├── __init__.py
+│   └── image.py
+├── vehicles.json
+└── yolov8n.pt
