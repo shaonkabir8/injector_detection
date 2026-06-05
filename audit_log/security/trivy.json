@@ -1,0 +1,1080 @@
+2026-06-05T23:40:59+06:00	INFO	Vulnerability scanning is enabled
+2026-06-05T23:40:59+06:00	INFO	Secret scanning is enabled
+2026-06-05T23:40:59+06:00	INFO	If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-06-05T23:40:59+06:00	INFO	Please see also https://aquasecurity.github.io/trivy/v0.52/docs/scanner/secret/#recommendation for faster secret detection
+2026-06-05T23:41:08+06:00	WARN	[pip] Unable to find python `site-packages` directory. License detection is skipped.	err="site-packages directory not found"
+2026-06-05T23:41:08+06:00	INFO	Number of language-specific files	num=1
+2026-06-05T23:41:08+06:00	INFO	[pip] Detecting vulnerabilities...
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2026-06-05T23:41:08.095608293+06:00",
+  "ArtifactName": ".",
+  "ArtifactType": "filesystem",
+  "Metadata": {
+    "ImageConfig": {
+      "architecture": "",
+      "created": "0001-01-01T00:00:00Z",
+      "os": "",
+      "rootfs": {
+        "type": "",
+        "diff_ids": null
+      },
+      "config": {}
+    }
+  },
+  "Results": [
+    {
+      "Target": "requirements.txt",
+      "Class": "lang-pkgs",
+      "Type": "pip",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-25990",
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@10.3.0",
+            "UID": "a9ea31f31ff728e6"
+          },
+          "InstalledVersion": "10.3.0",
+          "FixedVersion": "12.1.1",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25990",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "pillow: Pillow: Out-of-bounds Write via Specially Crafted PSD Image",
+          "Description": "Pillow is a Python imaging library. From 10.3.0 to before 12.1.1, an out-of-bounds write may be triggered when loading a specially crafted PSD image. This vulnerability is fixed in 12.1.1.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {},
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 7.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/02/12/1",
+            "https://access.redhat.com/security/cve/CVE-2026-25990",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/54ba4db542ad3c7b918812a4e2d69c27735a3199",
+            "https://github.com/python-pillow/Pillow/commit/9000313cc5d4a31bdcdd6d7f0781101abab553aa",
+            "https://github.com/python-pillow/Pillow/pull/9427",
+            "https://github.com/python-pillow/Pillow/security/advisories/GHSA-cfh3-3jmp-rvhc",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-25990",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/12.1.1.html",
+            "https://ubuntu.com/security/notices/USN-8047-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-25990"
+          ],
+          "PublishedDate": "2026-02-11T21:16:20.67Z",
+          "LastModifiedDate": "2026-04-30T21:16:30.17Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-40192",
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@10.3.0",
+            "UID": "a9ea31f31ff728e6"
+          },
+          "InstalledVersion": "10.3.0",
+          "FixedVersion": "12.2.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40192",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "Pillow: Pillow: Denial of Service via decompression bomb in FITS image processing",
+          "Description": "Pillow is a Python imaging library. Versions 10.3.0 through 12.1.1 did not limit the amount of GZIP-compressed data read when decoding a FITS image, making them vulnerable to decompression bomb attacks. A specially crafted FITS file could cause unbounded memory consumption, leading to denial of service (OOM crash or severe performance degradation). If users are unable to immediately upgrade, they should only open specific image formats, excluding FITS, as a workaround.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400",
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-40192",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/3cb854e8b2bab43f40e342e665f9340d861aa628",
+            "https://github.com/python-pillow/Pillow/pull/9521",
+            "https://github.com/python-pillow/Pillow/security/advisories/GHSA-whj4-6x5x-4v2j",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-40192",
+            "https://pillow.readthedocs.io/en/stable/releasenotes/12.2.0.html#prevent-fits-decompression-bomb",
+            "https://ubuntu.com/security/notices/USN-8211-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-40192"
+          ],
+          "PublishedDate": "2026-04-15T23:16:10.053Z",
+          "LastModifiedDate": "2026-04-22T20:08:33.707Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-42311",
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@10.3.0",
+            "UID": "a9ea31f31ff728e6"
+          },
+          "InstalledVersion": "10.3.0",
+          "FixedVersion": "12.2.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42311",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "Pillow is a Python imaging library. From version 10.3.0 to before vers ...",
+          "Description": "Pillow is a Python imaging library. From version 10.3.0 to before version 12.2.0, processing a malicious PSD file could lead to memory corruption, potentially resulting in a crash or arbitrary code execution. This issue has been patched in version 12.2.0.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190",
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 3,
+            "ghsa": 3,
+            "nvd": 3
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {},
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/58f9a1d166dcb0c274807d4423522d205b0c35ea",
+            "https://github.com/python-pillow/Pillow/pull/9520",
+            "https://github.com/python-pillow/Pillow/releases/tag/12.2.0",
+            "https://github.com/python-pillow/Pillow/security/advisories/GHSA-cfh3-3jmp-rvhc",
+            "https://github.com/python-pillow/Pillow/security/advisories/GHSA-pwv6-vv43-88gr",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42311"
+          ],
+          "PublishedDate": "2026-05-09T06:16:10.43Z",
+          "LastModifiedDate": "2026-05-14T20:27:45.59Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-42308",
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@10.3.0",
+            "UID": "a9ea31f31ff728e6"
+          },
+          "InstalledVersion": "10.3.0",
+          "FixedVersion": "12.2.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42308",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "Pillow: python: Pillow: Denial of Service via integer overflow in font processing",
+          "Description": "Pillow is a Python imaging library. Prior to version 12.2.0, if a font advances for each glyph by an exceeding large amount, when Pillow keeps track of the current position, it may lead to an integer overflow. This issue has been patched in version 12.2.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 2,
+            "ghsa": 2,
+            "nvd": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.2
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-42308",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/releases/tag/12.2.0",
+            "https://github.com/python-pillow/Pillow/security/advisories/GHSA-wjx4-4jcj-g98j",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42308",
+            "https://www.cve.org/CVERecord?id=CVE-2026-42308"
+          ],
+          "PublishedDate": "2026-05-09T06:16:09.793Z",
+          "LastModifiedDate": "2026-05-12T17:57:20.027Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-42310",
+          "PkgName": "Pillow",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/pillow@10.3.0",
+            "UID": "a9ea31f31ff728e6"
+          },
+          "InstalledVersion": "10.3.0",
+          "FixedVersion": "12.2.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42310",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "Pillow: Pillow: Denial of Service via malicious PDF processing",
+          "Description": "Pillow is a Python imaging library. From version 4.2.0 to before version 12.2.0, an attacker can supply a malicious PDF that causes the process to hang indefinitely, consuming 100% CPU and making the application unresponsive. This issue has been patched in version 12.2.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-835"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "bitnami": 2,
+            "ghsa": 2,
+            "nvd": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-42310",
+            "https://github.com/python-pillow/Pillow",
+            "https://github.com/python-pillow/Pillow/commit/3bf614e4b8615d0ce1d5039efaf6db447fe7c468",
+            "https://github.com/python-pillow/Pillow/pull/9519",
+            "https://github.com/python-pillow/Pillow/releases/tag/12.2.0",
+            "https://github.com/python-pillow/Pillow/security/advisories/GHSA-r73j-pqj5-w3x7",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42310",
+            "https://www.cve.org/CVERecord?id=CVE-2026-42310"
+          ],
+          "PublishedDate": "2026-05-09T06:16:10.273Z",
+          "LastModifiedDate": "2026-05-12T17:55:38.317Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-28684",
+          "PkgName": "python-dotenv",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/python-dotenv@1.0.1",
+            "UID": "3a0f3c109134a477"
+          },
+          "InstalledVersion": "1.0.1",
+          "FixedVersion": "1.2.2",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-28684",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-dotenv: python-dotenv: Arbitrary file overwrite via symbolic link following",
+          "Description": "python-dotenv reads key-value pairs from a .env file and can set them as environment variables. Prior to version 1.2.2, `set_key()` and `unset_key()` in python-dotenv follow symbolic links when rewriting `.env` files, allowing a local attacker to overwrite arbitrary files via a crafted symlink when a cross-device rename fallback is triggered. Users should upgrade to v.1.2.2 or, as a workaround, apply the patch manually.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-59",
+            "CWE-61"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:N/I:H/A:H",
+              "V3Score": 6.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:H",
+              "V3Score": 7.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-28684",
+            "https://github.com/theskumar/python-dotenv",
+            "https://github.com/theskumar/python-dotenv/commit/790c5c02991100aa1bf41ee5330aca75edc51311",
+            "https://github.com/theskumar/python-dotenv/commit/790c5c02991100aa1bf41ee5330aca75edc51311.patch",
+            "https://github.com/theskumar/python-dotenv/releases/tag/v1.2.2",
+            "https://github.com/theskumar/python-dotenv/security/advisories/GHSA-mf9w-mj56-hr94",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-28684",
+            "https://www.cve.org/CVERecord?id=CVE-2026-28684"
+          ],
+          "PublishedDate": "2026-04-20T17:16:33.087Z",
+          "LastModifiedDate": "2026-04-27T13:44:13.593Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-53981",
+          "PkgName": "python-multipart",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/python-multipart@0.0.9",
+            "UID": "c75994bf3578748b"
+          },
+          "InstalledVersion": "0.0.9",
+          "FixedVersion": "0.0.18",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-53981",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-multipart: python-multipart has a DoS via deformation `multipart/form-data` boundary",
+          "Description": "python-multipart is a streaming multipart parser for Python. When parsing form data, python-multipart skips line breaks (CR \\r or LF \\n) in front of the first boundary and any tailing bytes after the last boundary. This happens one byte at a time and emits a log event each time, which may cause excessive logging for certain inputs. An attacker could abuse this by sending a malicious request with lots of data before the first or after the last boundary, causing high CPU load and stalling the processing thread for a significant amount of time. In case of ASGI application, this could stall the event loop and prevent other requests from being processed, resulting in a denial of service (DoS). This vulnerability is fixed in 0.0.18.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-53981",
+            "https://github.com/Kludex/python-multipart",
+            "https://github.com/Kludex/python-multipart/commit/c4fe4d3cebc08c660e57dd709af1ffa7059b3177",
+            "https://github.com/Kludex/python-multipart/commit/c4fe4d3cebc08c660e57dd709af1ffa7059b3177 (0.0.19)",
+            "https://github.com/Kludex/python-multipart/security/advisories/GHSA-59g5-xgcq-4qw3",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-53981",
+            "https://ubuntu.com/security/notices/USN-8027-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-53981"
+          ],
+          "PublishedDate": "2024-12-02T16:15:14.457Z",
+          "LastModifiedDate": "2026-04-15T00:35:42.02Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-24486",
+          "PkgName": "python-multipart",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/python-multipart@0.0.9",
+            "UID": "c75994bf3578748b"
+          },
+          "InstalledVersion": "0.0.9",
+          "FixedVersion": "0.0.22",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-24486",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-multipart: Python-Multipart: Arbitrary file write via path traversal vulnerability",
+          "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to version 0.0.22, a Path Traversal vulnerability exists when using non-default configuration options `UPLOAD_DIR` and `UPLOAD_KEEP_FILENAME=True`. An attacker can write uploaded files to arbitrary locations on the filesystem by crafting a malicious filename. Users should upgrade to version 0.0.22 to receive a patch or, as a workaround, avoid using `UPLOAD_KEEP_FILENAME=True` in project configurations.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-22"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "nvd": 3,
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:L",
+              "V3Score": 8.6
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:L",
+              "V3Score": 8.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-24486",
+            "https://github.com/Kludex/python-multipart",
+            "https://github.com/Kludex/python-multipart/commit/9433f4bbc9652bdde82bbe380984e32f8cfc89c4",
+            "https://github.com/Kludex/python-multipart/commit/9433f4bbc9652bdde82bbe380984e32f8cfc89c4 (0.0.22)",
+            "https://github.com/Kludex/python-multipart/releases/tag/0.0.22",
+            "https://github.com/Kludex/python-multipart/security/advisories/GHSA-wp53-j4wj-2cfg",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-24486",
+            "https://ubuntu.com/security/notices/USN-8027-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-24486"
+          ],
+          "PublishedDate": "2026-01-27T01:16:02.303Z",
+          "LastModifiedDate": "2026-02-17T20:44:50.21Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-42561",
+          "PkgName": "python-multipart",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/python-multipart@0.0.9",
+            "UID": "c75994bf3578748b"
+          },
+          "InstalledVersion": "0.0.9",
+          "FixedVersion": "0.0.27",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42561",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "Python-Multipart is a streaming multipart parser for Python. Prior to  ...",
+          "Description": "Python-Multipart is a streaming multipart parser for Python. Prior to 0.0.27, python-multipart has a denial of service vulnerability in multipart part header parsing. When parsing multipart/form-data, MultipartParser previously had no limit on the number of part headers or the size of an individual part header. An attacker could send a request with either many repeated headers without terminating the header block or a single very large header value, causing excessive CPU work before request rejection or completion. This vulnerability is fixed in 0.0.27.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://github.com/Kludex/python-multipart",
+            "https://github.com/Kludex/python-multipart/security/advisories/GHSA-pp6c-gr5w-3c5g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-42561"
+          ],
+          "PublishedDate": "2026-05-13T21:16:47.07Z",
+          "LastModifiedDate": "2026-05-14T17:00:31.31Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-40347",
+          "PkgName": "python-multipart",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/python-multipart@0.0.9",
+            "UID": "c75994bf3578748b"
+          },
+          "InstalledVersion": "0.0.9",
+          "FixedVersion": "0.0.26",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-40347",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "python-multipart: Python-Multipart: Denial of Service via crafted multipart/form-data requests",
+          "Description": "Python-Multipart is a streaming multipart parser for Python. Versions prior to 0.0.26 have a denial of service vulnerability when parsing crafted `multipart/form-data` requests with large preamble or epilogue sections. Upgrade to version 0.0.26 or later, which skips ahead to the next boundary candidate when processing leading CR/LF data and immediately discards epilogue data after the closing boundary.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-400",
+            "CWE-834"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.9
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-40347",
+            "https://github.com/Kludex/python-multipart",
+            "https://github.com/Kludex/python-multipart/releases/tag/0.0.26",
+            "https://github.com/Kludex/python-multipart/security/advisories/GHSA-mj87-hwqh-73pj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-40347",
+            "https://www.cve.org/CVERecord?id=CVE-2026-40347"
+          ],
+          "PublishedDate": "2026-04-18T00:16:38.52Z",
+          "LastModifiedDate": "2026-04-24T16:51:19.917Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-35195",
+          "PkgName": "requests",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/requests@2.31.0",
+            "UID": "2068790f5fa6c273"
+          },
+          "InstalledVersion": "2.31.0",
+          "FixedVersion": "2.32.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-35195",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "requests: subsequent requests to the same host ignore cert verification",
+          "Description": "Requests is a HTTP library. Prior to 2.32.0, when making requests through a Requests `Session`, if the first request is made with `verify=False` to disable cert verification, all subsequent requests to the same host will continue to ignore cert verification regardless of changes to the value of `verify`. This behavior will continue for the lifecycle of the connection in the connection pool. This vulnerability is fixed in 2.32.0.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-670"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "ghsa": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 5.6
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 5.6
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2025:7049",
+            "https://access.redhat.com/security/cve/CVE-2024-35195",
+            "https://bugzilla.redhat.com/2282114",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2282114",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-35195",
+            "https://errata.almalinux.org/9/ALSA-2025-7049.html",
+            "https://errata.rockylinux.org/RLSA-2025:7049",
+            "https://github.com/psf/requests",
+            "https://github.com/psf/requests/commit/a58d7f2ffb4d00b46dca2d70a3932a0b37e22fac",
+            "https://github.com/psf/requests/pull/6655",
+            "https://github.com/psf/requests/security/advisories/GHSA-9wx4-h78v-vm56",
+            "https://linux.oracle.com/cve/CVE-2024-35195.html",
+            "https://linux.oracle.com/errata/ELSA-2025-7049.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IYLSNK5TL46Q6XPRVMHVWS63MVJQOK4Q",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/IYLSNK5TL46Q6XPRVMHVWS63MVJQOK4Q/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/N7WP6EYDSUOCOJYHDK5NX43PYZ4SNHGZ",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/N7WP6EYDSUOCOJYHDK5NX43PYZ4SNHGZ/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-35195",
+            "https://ubuntu.com/security/notices/USN-8344-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-35195"
+          ],
+          "PublishedDate": "2024-05-20T21:15:09.99Z",
+          "LastModifiedDate": "2026-04-15T00:35:42.02Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-47081",
+          "PkgName": "requests",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/requests@2.31.0",
+            "UID": "2068790f5fa6c273"
+          },
+          "InstalledVersion": "2.31.0",
+          "FixedVersion": "2.32.4",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-47081",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "requests: Requests vulnerable to .netrc credentials leak via malicious URLs",
+          "Description": "Requests is a HTTP library. Due to a URL parsing issue, Requests releases prior to 2.32.4 may leak .netrc credentials to third parties for specific maliciously-crafted URLs. Users should upgrade to version 2.32.4 to receive a fix. For older versions of Requests, use of the .netrc file can be disabled with `trust_env=False` on one's Requests Session.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "VendorSeverity": {
+            "alma": 2,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "ghsa": 2,
+            "oracle-oval": 2,
+            "photon": 2,
+            "redhat": 2,
+            "rocky": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://seclists.org/fulldisclosure/2025/Jun/2",
+            "http://www.openwall.com/lists/oss-security/2025/06/03/11",
+            "http://www.openwall.com/lists/oss-security/2025/06/03/9",
+            "http://www.openwall.com/lists/oss-security/2025/06/04/1",
+            "http://www.openwall.com/lists/oss-security/2025/06/04/6",
+            "https://access.redhat.com/errata/RHSA-2025:12519",
+            "https://access.redhat.com/security/cve/CVE-2024-47081",
+            "https://bugzilla.redhat.com/2371272",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2371272",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-47081",
+            "https://errata.almalinux.org/9/ALSA-2025-12519.html",
+            "https://errata.rockylinux.org/RLSA-2025:13604",
+            "https://github.com/psf/requests",
+            "https://github.com/psf/requests/commit/96ba401c1296ab1dda74a2365ef36d88f7d144ef",
+            "https://github.com/psf/requests/pull/6965",
+            "https://github.com/psf/requests/security/advisories/GHSA-9hjg-9r4m-mvj7",
+            "https://linux.oracle.com/cve/CVE-2024-47081.html",
+            "https://linux.oracle.com/errata/ELSA-2025-14999.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-47081",
+            "https://requests.readthedocs.io/en/latest/api/#requests.Session.trust_env",
+            "https://seclists.org/fulldisclosure/2025/Jun/2",
+            "https://ubuntu.com/security/notices/USN-7568-1",
+            "https://ubuntu.com/security/notices/USN-7762-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-47081",
+            "https://www.openwall.com/lists/oss-security/2025/06/03/9"
+          ],
+          "PublishedDate": "2025-06-09T18:15:24.983Z",
+          "LastModifiedDate": "2026-04-15T00:35:42.02Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-25645",
+          "PkgName": "requests",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/requests@2.31.0",
+            "UID": "2068790f5fa6c273"
+          },
+          "InstalledVersion": "2.31.0",
+          "FixedVersion": "2.33.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25645",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "requests: Requests: Security bypass due to predictable temporary file creation",
+          "Description": "Requests is a HTTP library. Prior to version 2.33.0, the `requests.utils.extract_zipped_paths()` utility function uses a predictable filename when extracting files from zip archives into the system temporary directory. If the target file already exists, it is reused without validation. A local attacker with write access to the temp directory could pre-create a malicious file that would be loaded in place of the legitimate one. Standard usage of the Requests library is not affected by this vulnerability. Only applications that call `extract_zipped_paths()` directly are impacted. Starting in version 2.33.0, the library extracts files to a non-deterministic location. If developers are unable to upgrade, they can set `TMPDIR` in their environment to a directory with restricted write access.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-377"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "ghsa": 2,
+            "nvd": 2,
+            "photon": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:R/S:U/C:N/I:H/A:N",
+              "V3Score": 4.4
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-25645",
+            "https://github.com/psf/requests",
+            "https://github.com/psf/requests/commit/66d21cb07bd6255b1280291c4fafb71803cdb3b7",
+            "https://github.com/psf/requests/releases/tag/v2.33.0",
+            "https://github.com/psf/requests/security/advisories/GHSA-gc5v-m9x4-r6x2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-25645",
+            "https://www.cve.org/CVERecord?id=CVE-2026-25645"
+          ],
+          "PublishedDate": "2026-03-25T17:16:52.97Z",
+          "LastModifiedDate": "2026-03-30T14:23:16.127Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-32434",
+          "PkgName": "torch",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/torch@2.5.1",
+            "UID": "7baf60e8c23272b9"
+          },
+          "InstalledVersion": "2.5.1",
+          "FixedVersion": "2.6.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-32434",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "PyTorch is a Python package that provides tensor computation with stro ...",
+          "Description": "PyTorch is a Python package that provides tensor computation with strong GPU acceleration and deep neural networks built on a tape-based autograd system. In version 2.5.1 and prior, a Remote Command Execution (RCE) vulnerability exists in PyTorch when loading a model using torch.load with weights_only=True. This issue has been patched in version 2.6.0.",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-502"
+          ],
+          "VendorSeverity": {
+            "azure": 4,
+            "bitnami": 4,
+            "cbl-mariner": 4,
+            "ghsa": 4,
+            "nvd": 4
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {},
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://github.com/pypa/advisory-database/tree/main/vulns/torch/PYSEC-2025-41.yaml",
+            "https://github.com/pytorch/pytorch",
+            "https://github.com/pytorch/pytorch/commit/8d4b8a920a2172523deb95bf20e8e52d50649c04",
+            "https://github.com/pytorch/pytorch/security/advisories/GHSA-53q9-r3pm-6pq6",
+            "https://lists.debian.org/debian-lts-announce/2025/12/msg00000.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-32434"
+          ],
+          "PublishedDate": "2025-04-18T16:15:23.183Z",
+          "LastModifiedDate": "2025-12-01T07:16:01.807Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-3730",
+          "PkgName": "torch",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/torch@2.5.1",
+            "UID": "7baf60e8c23272b9"
+          },
+          "InstalledVersion": "2.5.1",
+          "FixedVersion": "2.8.0",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-3730",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "A vulnerability, which was classified as problematic, was found in PyT ...",
+          "Description": "A vulnerability, which was classified as problematic, was found in PyTorch 2.6.0. Affected is the function torch.nn.functional.ctc_loss of the file aten/src/ATen/native/LossCTC.cpp. The manipulation leads to denial of service. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. The real existence of this vulnerability is still doubted at the moment. The name of the patch is 46fc5d8e360127361211cb237d5f9eef0223e567. It is recommended to apply a patch to fix this issue. The security policy of the project warns to use unknown models which might establish malicious effects.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-404"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 2,
+            "cbl-mariner": 2,
+            "ghsa": 2,
+            "nvd": 2
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            }
+          },
+          "References": [
+            "https://github.com/pytorch/pytorch",
+            "https://github.com/pytorch/pytorch/commit/01f226bfb8f2c343f5c614a6bbf685d91160f3af",
+            "https://github.com/pytorch/pytorch/issues/150835",
+            "https://github.com/pytorch/pytorch/issues/150835#issue-2979082232",
+            "https://github.com/pytorch/pytorch/pull/150981",
+            "https://github.com/timocafe/tewart-pytorch/commit/46fc5d8e360127361211cb237d5f9eef0223e567",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-3730",
+            "https://vuldb.com/?ctiid.305076",
+            "https://vuldb.com/?id.305076",
+            "https://vuldb.com/?submit.553645"
+          ],
+          "PublishedDate": "2025-04-16T21:15:48.7Z",
+          "LastModifiedDate": "2025-05-28T17:35:54.08Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-2953",
+          "PkgName": "torch",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/torch@2.5.1",
+            "UID": "7baf60e8c23272b9"
+          },
+          "InstalledVersion": "2.5.1",
+          "FixedVersion": "2.7.1-rc1",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-2953",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "torch: PyTorch torch.mkldnn_max_pool2d denial of service",
+          "Description": "A vulnerability, which was classified as problematic, has been found in PyTorch 2.6.0+cu124. Affected by this issue is the function torch.mkldnn_max_pool2d. The manipulation leads to denial of service. An attack has to be approached locally. The exploit has been disclosed to the public and may be used. The real existence of this vulnerability is still doubted at the moment. The security policy of the project warns to use unknown models which might establish malicious effects.",
+          "Severity": "LOW",
+          "CweIDs": [
+            "CWE-404"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "bitnami": 2,
+            "cbl-mariner": 2,
+            "ghsa": 1,
+            "nvd": 2,
+            "redhat": 1
+          },
+          "CVSS": {
+            "bitnami": {},
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 3.3
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-2953",
+            "https://github.com/pytorch/pytorch",
+            "https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models",
+            "https://github.com/pytorch/pytorch/issues/149274",
+            "https://github.com/pytorch/pytorch/issues/149274#issue-2923122269",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-2953",
+            "https://vuldb.com/?ctiid.302006",
+            "https://vuldb.com/?id.302006",
+            "https://vuldb.com/?submit.521279",
+            "https://www.cve.org/CVERecord?id=CVE-2025-2953"
+          ],
+          "PublishedDate": "2025-03-30T16:15:14.38Z",
+          "LastModifiedDate": "2025-04-22T12:15:16.043Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38519",
+          "PkgName": "yt-dlp",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/yt-dlp@2024.4.9",
+            "UID": "4c015e0d73dcacc9"
+          },
+          "InstalledVersion": "2024.4.9",
+          "FixedVersion": "2024.07.01",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38519",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "`yt-dlp` and `youtube-dl` are command-line audio/video downloaders. Pr ...",
+          "Description": "`yt-dlp` and `youtube-dl` are command-line audio/video downloaders. Prior to the fixed versions, `yt-dlp` and `youtube-dl` do not limit the extensions of downloaded files, which could lead to arbitrary filenames being created in the download folder (and path traversal on Windows). Since `yt-dlp` and `youtube-dl` also read config from the working directory (and on Windows executables will be executed from the `yt-dlp` or `youtube-dl` directory), this could lead to arbitrary code being executed.\n\n\n\n\n`yt-dlp` version 2024.07.01 fixes this issue by whitelisting the allowed extensions. `youtube-dl` fixes this issue in commit `d42a222` on the `master` branch and in nightly builds tagged 2024-07-03 or later. This might mean some very uncommon extensions might not get downloaded, however it will also limit the possible exploitation surface. In addition to upgrading, have `.%(ext)s` at the end of the output template and make sure the user trusts the websites that they are downloading from. Also, make sure to never download to a directory within PATH or other sensitive locations like one's user directory, `system32`, or other binaries locations. For users who are not able to upgrade, keep the default output template (`-o \"%(title)s [%(id)s].%(ext)s`); make sure the extension of the media to download is a common video/audio/sub/... one; try to avoid the generic extractor; and/or use `--ignore-config --config-location ...` to not load config from common locations.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-669"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://github.com/dirkf/youtube-dl/security/advisories/GHSA-22fp-mf44-f2mq",
+            "https://github.com/yt-dlp/yt-dlp",
+            "https://github.com/yt-dlp/yt-dlp/commit/5ce582448ececb8d9c30c8c31f58330090ced03a",
+            "https://github.com/yt-dlp/yt-dlp/releases/tag/2024.07.01",
+            "https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-79w7-vh3h-8g4j",
+            "https://github.com/ytdl-org/youtube-dl/commit/d42a222ed541b96649396ef00e19552aef0f09ec",
+            "https://github.com/ytdl-org/youtube-dl/pull/32830",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38519",
+            "https://securitylab.github.com/advisories/GHSL-2024-089_youtube-dl",
+            "https://securitylab.github.com/advisories/GHSL-2024-089_youtube-dl/",
+            "https://securitylab.github.com/advisories/GHSL-2024-090_yt-dlp"
+          ],
+          "PublishedDate": "2024-07-02T14:15:13.737Z",
+          "LastModifiedDate": "2026-04-15T00:35:42.02Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-26331",
+          "PkgName": "yt-dlp",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/yt-dlp@2024.4.9",
+            "UID": "4c015e0d73dcacc9"
+          },
+          "InstalledVersion": "2024.4.9",
+          "FixedVersion": "2026.02.21",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-26331",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "yt-dlp: yt-dlp: Arbitrary command injection via maliciously crafted URL when --netrc-cmd is used",
+          "Description": "yt-dlp is a command-line audio/video downloader. Starting in version 2023.06.21 and prior to version 2026.02.21, when yt-dlp's `--netrc-cmd` command-line option (or `netrc_cmd` Python API parameter) is used, an attacker could achieve arbitrary command injection on the user's system with a maliciously crafted URL. yt-dlp maintainers assume the impact of this vulnerability to be high for anyone who uses `--netrc-cmd` in their command/configuration or `netrc_cmd` in their Python scripts. Even though the maliciously crafted URL itself will look very suspicious to many users, it would be trivial for a maliciously crafted webpage with an inconspicuous URL to covertly exploit this vulnerability via HTTP redirect. Users without `--netrc-cmd` in their arguments or `netrc_cmd` in their scripts are unaffected. No evidence has been found of this exploit being used in the wild. yt-dlp version 2026.02.21 fixes this issue by validating all netrc \"machine\" values and raising an error upon unexpected input. As a workaround, users who are unable to upgrade should avoid using the `--netrc-cmd` command-line option (or `netrc_cmd` Python API parameter), or they should at least not pass a placeholder (`{}`) in their `--netrc-cmd` argument.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-78"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 8.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-26331",
+            "https://github.com/yt-dlp/yt-dlp",
+            "https://github.com/yt-dlp/yt-dlp/commit/1fbbe29b99dc61375bf6d786f824d9fcf6ea9c1a",
+            "https://github.com/yt-dlp/yt-dlp/releases/tag/2026.02.21",
+            "https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-g3gw-q23r-pgqm",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-26331",
+            "https://www.cve.org/CVERecord?id=CVE-2026-26331"
+          ],
+          "PublishedDate": "2026-02-24T03:16:01.71Z",
+          "LastModifiedDate": "2026-02-25T19:32:30.417Z"
+        },
+        {
+          "VulnerabilityID": "GHSA-3v33-3wmw-3785",
+          "PkgName": "yt-dlp",
+          "PkgIdentifier": {
+            "PURL": "pkg:pypi/yt-dlp@2024.4.9",
+            "UID": "4c015e0d73dcacc9"
+          },
+          "InstalledVersion": "2024.4.9",
+          "FixedVersion": "2024.07.07",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://github.com/advisories/GHSA-3v33-3wmw-3785",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory pip",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Apip"
+          },
+          "Title": "yt-dlp has dependency on potentially malicious third-party code in Douyu extractors",
+          "Description": "### Impact\nyt-dlp's DouyuTV and DouyuShow extractors used a `cdn.bootcdn.net` URL as a fallback for fetching a component of the crypto-js JavaScript library. When the Douyu extractor is used, yt-dlp extracts this JavaScript code and attempts to execute it externally using [PhantomJS](https://github.com/ariya/phantomjs). `bootcdn.net` is owned by the bad actor responsible for the [Polyfill JS supply chain attack](https://sansec.io/research/polyfill-supply-chain-attack) that has been ongoing since at least June 2023. While there is no evidence that PhantomJS has been targeted by or is vulnerable to any attacks carried out by the Polyfill JS actor, there is the possibility that malicious JavaScript code may have been downloaded/cached by yt-dlp or executed by PhantomJS.\n\nIn order for this potential vulnerability to be exploited by any hypothetical attack, all 3 of the following conditions must be met:\n1. The user has PhantomJS installed on their system.\n2. The user passes a `douyu.com` or `douyutv.com` URL to yt-dlp as input, or passes a URL that redirects to one of these domains.\n3. `cdnjs.cloudflare.com` is unavailable or blocked at the time of extraction, necessitating the usage of the `cdn.bootcdn.net` fallback; or it had been unavailable during a previous run of the Douyu extractor and JavaScript code from `cdn.bootcdn.net` had been cached to disk.\n\n### Patches\nyt-dlp version 2024.07.07 fixes this issue by removing the URL pointing to the malicious CDN and by invalidating any Douyu extractor cache data created by unpatched versions of yt-dlp.\n\n### Workarounds\nIt is recommended to upgrade yt-dlp to version 2024.07.07 as soon as possible.\n\nFor users not able to upgrade:\n- Avoid using the Douyu extractors (`--ies default,-douyutv,-douyushow`)\n- Uninstall (or do not install) PhantomJS\n\n### Acknowledgement\nThanks to @LeSuisse for [reporting this](https://github.com/yt-dlp/yt-dlp/pull/10347) promptly after `bootcdn.net` was discovered to be under control of the same bad actor behind the `polyfill.io` supply chain attack.\n\n### References\n- https://github.com/yt-dlp/yt-dlp/commit/6075a029dba70a89675ae1250e7cdfd91f0eba41\n- https://sansec.io/research/polyfill-supply-chain-attack\n",
+          "Severity": "LOW",
+          "VendorSeverity": {
+            "ghsa": 1
+          },
+          "References": [
+            "https://github.com/yt-dlp/yt-dlp",
+            "https://github.com/yt-dlp/yt-dlp/commit/6075a029dba70a89675ae1250e7cdfd91f0eba41",
+            "https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-3v33-3wmw-3785",
+            "https://sansec.io/research/polyfill-supply-chain-attack"
+          ],
+          "PublishedDate": "2024-07-08T14:22:00Z",
+          "LastModifiedDate": "2024-07-08T14:22:00Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-06-06T00:15:39+06:00",
+  "repository": "https://github.com/shaonkabir8/injector_detection.git",
+  "python_version": "3.12.3",
+  "framework": "FastAPI",
+  "package_manager": "pip",
+  "project_type": "python",
+  "environment": "development",
+  "git": {
+    "commit_hash": "cfe7e4f22926839d7ca136b7ab37ddd034528ff2",
+    "branch": "main",
+    "last_commit_timestamp": 1780679003,
+    "contributors_count": 1
+  },
+  "statistics": {
+    "repository_size": "169M",
+    "python_files": 35,
+    "total_files": 1264,
+    "lines_of_code": 5689
+  }
+}
