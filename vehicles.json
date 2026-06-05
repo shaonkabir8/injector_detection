@@ -1,0 +1,128 @@
+[
+  {
+    "plate": "GAZIPUR-D-11-1423",
+    "vehicle_type": "Truck",
+    "sub_type": "Truck-Large",
+    "owner": "Rahim Brick Industries",
+    "department": "Outbound Brick Delivery",
+    "authorized": true,
+    "notes": "10-wheeler bulk brick lorry — deliveries Mon–Sat"
+  },
+  {
+    "plate": "GAZIPUR-D-11-1887",
+    "vehicle_type": "Truck",
+    "sub_type": "Truck-Large",
+    "owner": "Karim Transport Co.",
+    "department": "Outbound Brick Delivery",
+    "authorized": true,
+    "notes": "12-wheeler heavy lorry"
+  },
+  {
+    "plate": "NARAYANGANJ-C-23-4412",
+    "vehicle_type": "Truck",
+    "sub_type": "Truck-Medium",
+    "owner": "Hasan Brothers Logistics",
+    "department": "Inbound Raw Clay",
+    "authorized": true,
+    "notes": "5-tonne flatbed truck — clay supply runs"
+  },
+  {
+    "plate": "NARAYANGANJ-C-23-5531",
+    "vehicle_type": "Truck",
+    "sub_type": "Truck-Medium",
+    "owner": "Al-Amin Transport",
+    "department": "Outbound Brick Delivery",
+    "authorized": true,
+    "notes": "Box truck for packaged brick orders"
+  },
+  {
+    "plate": "KERANIGANJ-KA-11-7701",
+    "vehicle_type": "Truck",
+    "sub_type": "Truck-Small",
+    "owner": "Mostofa Suppliers",
+    "department": "Inbound Fuel & Materials",
+    "authorized": true,
+    "notes": "Mini-truck for coal and fuel deliveries"
+  },
+  {
+    "plate": "MUNSHIGANJ-B-14-3356",
+    "vehicle_type": "Tractor",
+    "sub_type": "Tractor",
+    "owner": "Kiln Internal Fleet",
+    "department": "Yard Operations",
+    "authorized": true,
+    "notes": "Power tiller — internal clay yard transport"
+  },
+  {
+    "plate": "MUNSHIGANJ-B-14-3357",
+    "vehicle_type": "Tractor",
+    "sub_type": "Tractor",
+    "owner": "Kiln Internal Fleet",
+    "department": "Yard Operations",
+    "authorized": true,
+    "notes": "Power tiller — internal kiln yard shuttle"
+  },
+  {
+    "plate": "NARSINGDI-A-17-9902",
+    "vehicle_type": "Tractor",
+    "sub_type": "Tractor",
+    "owner": "Jamal Agri Services",
+    "department": "External Contractor",
+    "authorized": true,
+    "notes": "Contract tractor — seasonal clay haulage"
+  },
+  {
+    "plate": "GAZIPUR-D-11-0081",
+    "vehicle_type": "Trolley",
+    "sub_type": "Trolley",
+    "owner": "Kiln Internal Fleet",
+    "department": "Yard Operations",
+    "authorized": true,
+    "notes": "Open flatbed trolley #1 — tractor-pulled"
+  },
+  {
+    "plate": "GAZIPUR-D-11-0082",
+    "vehicle_type": "Trolley",
+    "sub_type": "Trolley",
+    "owner": "Kiln Internal Fleet",
+    "department": "Yard Operations",
+    "authorized": true,
+    "notes": "Open flatbed trolley #2 — tractor-pulled"
+  },
+  {
+    "plate": "GAZIPUR-D-11-0083",
+    "vehicle_type": "Trolley",
+    "sub_type": "Trolley",
+    "owner": "Kiln Internal Fleet",
+    "department": "Yard Operations",
+    "authorized": true,
+    "notes": "Open flatbed trolley #3 — tractor-pulled"
+  },
+  {
+    "plate": "NARAYANGANJ-C-23-6614",
+    "vehicle_type": "Truck",
+    "sub_type": "Truck-Large",
+    "owner": "Sohel Brick & Cement",
+    "department": "Outbound Brick Delivery",
+    "authorized": false,
+    "notes": "Contract expired 2025 — deny entry until renewed"
+  },
+  {
+    "plate": "KERANIGANJ-KA-11-2290",
+    "vehicle_type": "Truck",
+    "sub_type": "Truck-Medium",
+    "owner": "Reza Construction Supplies",
+    "department": "External Buyer",
+    "authorized": true,
+    "notes": "Spot buyer — authorized per order"
+  },
+  {
+    "plate": "NARSINGDI-A-17-5518",
+    "vehicle_type": "Trolley",
+    "sub_type": "Trolley",
+    "owner": "Jalal Transport",
+    "department": "External Contractor",
+    "authorized": true,
+    "notes": "External trolley for overflow clay haulage"
+  }
+]

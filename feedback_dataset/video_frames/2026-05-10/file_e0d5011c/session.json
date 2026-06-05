@@ -1,0 +1,11 @@
+{
+  "source": "file",
+  "stream_url": null,
+  "created_utc": "2026-05-10T06:38:21.187301+00:00",
+  "video_fps": 29.8314949863053,
+  "duration_ms": 24068.522222222226,
+  "sampled_frames": 48,
+  "vehicle_frames": 36,
+  "unique_vehicle_count": 10,
+  "processing_time_seconds": 262.4
+}
