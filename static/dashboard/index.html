@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecurityOS Dashboard</title>
+  <style>
+    body { margin:0; font-family:Inter,system-ui,sans-serif; background:#0f172a; color:#e2e8f0; }
+    .page { max-width:1200px; margin:0 auto; padding:24px; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:24px; }
+    h1 { margin:0; font-size:2rem; letter-spacing:-0.03em; }
+    .tag { background:#2563eb; color:#fff; padding:6px 12px; border-radius:999px; font-size:0.85rem; }
+    .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); }
+    .card { background:rgba(15,23,42,0.88); border:1px solid rgba(148,163,184,0.12); border-radius:18px; padding:20px; box-shadow:0 24px 60px rgba(15,23,42,0.25); }
+    .card h2 { margin:0 0 12px; font-size:1.1rem; color:#f8fafc; }
+    .stat { display:flex; justify-content:space-between; margin:12px 0; }
+    .stat strong { color:#fff; }
+    .code { background:rgba(148,163,184,0.08); padding:8px 12px; border-radius:10px; overflow-x:auto; font-family:ui-monospace,monospace; font-size:0.92rem; }
+    .logs { max-height:320px; overflow:auto; margin:0; padding:0; list-style:none; }
+    .logs li { border-bottom:1px solid rgba(148,163,184,0.1); padding:10px 0; }
+    .logs li:last-child { border-bottom:none; }
+    .label { color:#94a3b8; font-size:0.9rem; }
+    button { background:#2563eb; border:none; color:#fff; border-radius:12px; padding:10px 16px; cursor:pointer; font-weight:600; }
+    button:hover { background:#1d4ed8; }
+    .badge { display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:999px; font-size:0.82rem; }
+    .badge.green { background:#134e4a; color:#99f6e4; }
+    .badge.yellow { background:#78350f; color:#fde68a; }
+    .badge.red { background:#7f1d1d; color:#fecaca; }
+    .footer { margin-top:28px; color:#94a3b8; font-size:0.92rem; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <p class="tag">SecurityOS Dashboard</p>
+        <h1>Detection Service Status</h1>
+      </div>
+      <button id="refreshButton">Refresh</button>
+    </header>
+
+    <div class="grid">
+      <section class="card" id="serviceCard">
+        <h2>Service Health</h2>
+        <p class="label">API base path inferred from URL</p>
+        <div class="stat"><span>Service</span><strong id="serviceName">loading...</strong></div>
+        <div class="stat"><span>Version</span><strong id="serviceVersion">loading...</strong></div>
+        <div class="stat"><span>Status</span><strong id="serviceStatus">loading...</strong></div>
+        <div class="stat"><span>CPU usage</span><strong id="cpuUsage">--</strong></div>
+        <div class="stat"><span>RAM usage</span><strong id="ramUsage">--</strong></div>
+        <div class="stat"><span>Queue status</span><strong id="queueStatus">--</strong></div>
+      </section>
+
+      <section class="card" id="cacheCard">
+        <h2>Cache & Usage</h2>
+        <div class="stat"><span>Backend</span><strong id="cacheBackend">loading...</strong></div>
+        <div class="stat"><span>Cache hit rate</span><strong id="hitRate">--</strong></div>
+        <div class="stat"><span>Hit / miss</span><strong id="hitMiss">--</strong></div>
+        <div class="stat"><span>Detections today</span><strong id="detectionsToday">--</strong></div>
+        <div class="stat"><span>Detections total</span><strong id="detectionsTotal">--</strong></div>
+        <div class="stat"><span>Queue depth</span><strong id="queueDepth">--</strong></div>
+      </section>
+
+      <section class="card" id="auditCard">
+        <h2>Recent Audit Logs</h2>
+        <ul class="logs" id="auditLogs">
+          <li>Loading events...</li>
+        </ul>
+      </section>
+
+      <section class="card" id="jobCard">
+        <h2>Recent Queue Jobs</h2>
+        <div class="stat"><span>Total jobs</span><strong id="jobTotal">--</strong></div>
+        <ul class="logs" id="jobLogs">
+          <li>Loading jobs...</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer">
+      <p>Live dashboard for SecurityOS detector service. Refreshes every 15 seconds.</p>
+    </div>
+  </div>
+
+  <script>
+    const basePath = location.pathname.split('/dashboard')[0] || '';
+    const apiPrefix = basePath.endsWith('/') ? basePath.slice(0, -1) : basePath;
+    const endpoints = {
+      health: apiPrefix + '/healthz',
+      stats: apiPrefix + '/stats',
+      audit: apiPrefix + '/audit/summary',
+      queue: apiPrefix + '/queue',
+    };
+
+    function badgeClass(severity) {
+      if (severity === 'Online' || severity === 'ok') return 'badge green';
+      if (severity === 'Warning' || severity === 'queued') return 'badge yellow';
+      return 'badge red';
+    }
+
+    async function fetchJson(url) {
+      const res = await fetch(url, {cache:'no-store'});
+      return res.ok ? res.json() : {error: res.statusText};
+    }
+
+    function renderLogs(list, container) {
+      container.innerHTML = '';
+      if (!list || list.length === 0) {
+        container.innerHTML = '<li>No recent events.</li>';
+        return;
+      }
+      list.slice(0, 6).forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <div><strong>${item.health_type || item.status || item.job_id || 'event'}</strong></div>
+          <div class="label">${item.timestamp || item.created_at || ''}</div>
+          <div>${item.description || item.error || item.mode || ''}</div>
+        `;
+        container.appendChild(li);
+      });
+    }
+
+    async function loadDashboard() {
+      document.getElementById('refreshButton').disabled = true;
+      const [health, stats, audit, queue] = await Promise.all([
+        fetchJson(endpoints.health),
+        fetchJson(endpoints.stats),
+        fetchJson(endpoints.audit),
+        fetchJson(endpoints.queue),
+      ]);
+
+      document.getElementById('serviceName').textContent = health.service || 'n/a';
+      document.getElementById('serviceVersion').textContent = health.version || 'n/a';
+      document.getElementById('serviceStatus').innerHTML = `<span class="${badgeClass(health.status)}">${health.status || 'n/a'}</span>`;
+      document.getElementById('cpuUsage').textContent = health.processing_health?.cpu_usage ?? '--';
+      document.getElementById('ramUsage').textContent = health.processing_health?.ram_usage ?? '--';
+      document.getElementById('queueStatus').textContent = health.processing_health?.queue_status ?? '--';
+
+      document.getElementById('cacheBackend').textContent = stats.backend || 'n/a';
+      document.getElementById('hitRate').textContent = stats.hit_rate != null ? `${stats.hit_rate * 100}%` : '--';
+      document.getElementById('hitMiss').textContent = stats.cache_hits != null ? `${stats.cache_hits} / ${stats.cache_misses}` : '--';
+      document.getElementById('detectionsToday').textContent = stats.detections_today ?? '--';
+      document.getElementById('detectionsTotal').textContent = stats.detections_total ?? '--';
+      document.getElementById('queueDepth').textContent = stats.queue_depth ?? (queue.queue_depth ?? '--');
+
+      renderLogs(audit.data?.recent_logs, document.getElementById('auditLogs'));
+      document.getElementById('jobTotal').textContent = queue.total ?? '--';
+      renderLogs(queue.jobs, document.getElementById('jobLogs'));
+      document.getElementById('refreshButton').disabled = false;
+    }
+
+    document.getElementById('refreshButton').addEventListener('click', loadDashboard);
+    loadDashboard();
+    setInterval(loadDashboard, 15000);
+  </script>
+</body>
+</html>

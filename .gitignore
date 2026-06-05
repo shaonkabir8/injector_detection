@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+// Custom ignores for this project
+
+ui/
+server
+bash_scripts/
+frontend/
+__pycache__/
+*.pyc
+
